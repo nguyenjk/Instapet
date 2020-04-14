@@ -63,9 +63,9 @@ Open browser at http://localhost:8080
     #make sure all the environment variable is up to date.
     source ~/.profile
     #build individual image for each service.
-    docker build -r dockerhub_username/app-name
+    docker build -t dockerhub_username/app-name .
     #find all images
-    docker images
+    docker image ls
     #remove image
     docker image rm -f image_name/id
     #clean all images
@@ -81,7 +81,7 @@ Open browser at http://localhost:8080
 ```bash
     docker container ls
     docker container kill <container_name>
-    ocker container prune
+    docker container prune
 ```
 
 ```bash
