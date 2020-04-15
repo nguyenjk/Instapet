@@ -123,8 +123,27 @@ Open browser at http://localhost:8080
  Follow [kubeone link](https://github.com/kubermatic/kubeone/blob/master/docs/quickstart-aws.md) or [AWS EKS CLI](https://github.com/weaveworks/eksctl) 
 
 
-#### Deployment
+#### Deployment and Running local 
 
 ```bash
-    kubectl apply -f reverseproxy-deployment.yaml
+    #deploy config and secret
+    kubectl apply -f env-configmap.yaml
+    kubectl apply -f env-secret.yaml
+    kubectl apply -f aws-secret.yaml
+    
+    #deploy deployment
+    kubectl apply -f instapet-reverseproxy.yaml
+    kubectl apply -f instapet-user.yaml
+    kubectl apply -f instapet-feed.yaml
+    kubectl apply -f instapet-web.yaml
+    
+    #deploy service
+    kubectl apply -f instapet-reverseproxy-service.yaml
+    kubectl apply -f instapet-user-service.yaml
+    kubectl apply -f instapet-feed-service.yaml
+    kubectl apply -f instapet-web-service.yaml
+
+    #running service locally 
+    kubectl port-forward -p 8080:8080 reverseproxy
+    kubectl port-forward -p 8100:8100 instapet-web
 ```

@@ -4,15 +4,15 @@ services:
     build:
       context: ./instapet-proxy
     image: nguyendk82/reverseproxy 
-  backend_user:
+  instapet_user:
     build:
       context: ./instapet-user
     image: nguyendk82/instapet-user
-  backend_feed:
+  instapet_feed:
     build:
       context: ./instapet-feed  
     image: nguyendk82/instapet-feed
-  frontend:
+  instapet-web:
     build:
       context: ./instapet-web
     image: nguyendk82/instapet-web:local
