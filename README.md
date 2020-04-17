@@ -113,15 +113,20 @@ Open browser at http://localhost:8080
 #### Prerequisite
     Tools needed
 
-        1.  minikube
-        2.  kubeone
-        3.  kubectl
+        1.  minikube (install kubernetes on local for testing.)
+        2.  kubeone (install eks)
+        3.  kubectl (kubernetes command line)
+        4.  eksctl (official cli for aws eks)
 
     Setup
         1. Setup credentials for aws
         2. create infrastructure
- Follow [kubeone link](https://github.com/kubermatic/kubeone/blob/master/docs/quickstart-aws.md) or [AWS EKS CLI](https://github.com/weaveworks/eksctl) 
 
+ Follow [kubeone link](https://github.com/kubermatic/kubeone/blob/master/docs/quickstart-aws.md) or [AWS EKS CLI](https://github.com/weaveworks/eksctl), you can use eksctl to create new 
+
+```bash
+    eksctl create cluster -f eksconfig.yaml
+```
 
 #### Deployment and Running local 
 
@@ -147,3 +152,11 @@ Open browser at http://localhost:8080
     kubectl port-forward -p 8080:8080 reverseproxy
     kubectl port-forward -p 8100:8100 instapet-web
 ```
+
+### CICD process.
+
+Currently, the process of CICD is not completed. The chart below shows the process of CI. There is no deployment to AWS EKS yet but will be integrated in the future using [flux gitsop](https://eksctl.io/usage/experimental/gitops-flux/)
+
+The dot line represent not completed.
+
+![cicd chart](/resources/cicd.png)
