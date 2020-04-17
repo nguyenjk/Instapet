@@ -6,9 +6,9 @@ services:
           - 8080:8080
       restart: always
       depends_on:
-        - backend-user
-        - backend-feed     
-  backend-user:
+        - instapet-user
+        - instapet-feed     
+  instapet-user:
     image: nguyendk82/instapet-user
     volumes:
       - $HOME/.aws:/root/.aws
@@ -22,7 +22,7 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-  backend-feed:
+  instapet-feed:
     image: nguyendk82/instapet-feed
     volumes:
       - $HOME/.aws:/root/.aws

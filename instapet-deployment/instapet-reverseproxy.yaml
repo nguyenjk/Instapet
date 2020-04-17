@@ -1,9 +1,8 @@
-apiVersion: client.authentication.k8s.io/v1alpha1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
     service: reverseproxy
-    version: v2
   name: reverseproxy
 spec:
   replicas: 2
@@ -11,7 +10,6 @@ spec:
     metadata:
       labels:
         service: reverseproxy
-        version: v2
     spec:
       containers:
       - image: nguyendk82/reverseproxy
