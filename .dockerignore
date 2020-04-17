@@ -1,1 +1,5 @@
 node_modules
+volumes:
+    - ./instapet-user/node_modules
+    - ./instapet-feed/node_modules
+    - ./instapet-web/node_modules

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: udagram-knguyen-dev
+  AWS_PROFILE: udagram
+  AWS_REGION: us-west-2
+  JWT_SECRET: hellotokensecret
+  POSTGRESS_DATABASE: pekind
+  POSTGRESS_HOST: pekind.crmba6kvrbxw.us-west-2.rds.amazonaws.com
+  URL: http://localhost:8100  
+metadata:
+  name: env-config
+  

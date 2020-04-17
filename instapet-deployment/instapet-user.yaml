@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: instapet-uder
+    service: instapet-user
   name: instapet-user
 spec:
   replicas: 3
