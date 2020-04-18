@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     service: instapet-web
-  name: instapet-web
+  name: instapet-web-B
 spec:
   replicas: 2
   template:
@@ -13,7 +13,7 @@ spec:
         api: external        
     spec:
       containers:
-      - image: nguyendk82/instapet-web:local
+      - image: nguyendk82/instapet-web:remote
         name: frontend
         imagePullPolicy: Always          
         ports:
