@@ -155,6 +155,9 @@ Open browser at http://localhost:8080
 
 ### CICD process.
 
+[![Build Status](https://travis-ci.org/nguyenjk/Instapet.svg?branch=master)](https://travis-ci.org/nguyenjk/Instapet)
+
+
 Currently, the process of CICD is not completed. The chart below shows the process of CI. There is no deployment to AWS EKS yet but will be integrated in the future using [flux gitsop](https://eksctl.io/usage/experimental/gitops-flux/)
 
 The dot line represent not completed.
