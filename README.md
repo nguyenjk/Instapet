@@ -125,7 +125,7 @@ Open browser at http://localhost:8080
  Follow [kubeone link](https://github.com/kubermatic/kubeone/blob/master/docs/quickstart-aws.md) or [AWS EKS CLI](https://github.com/weaveworks/eksctl), you can use eksctl to create new 
 
 ```bash
-    eksctl create cluster -f eksconfig.yaml
+    eksctl create cluster -f eksconfig.yml
 ```
 
 #### Deployment and Running local 
@@ -149,8 +149,11 @@ Open browser at http://localhost:8080
     kubectl apply -f instapet-web-service.yaml
 
     #running service locally 
-    kubectl port-forward -p 8080:8080 reverseproxy
-    kubectl port-forward -p 8100:8100 instapet-web
+    kubectl port-forward -p 8080:8080 service/reverseproxy
+    kubectl port-forward -p 8100:8100 service/instapet-web
+
+    #scaling
+    
 ```
 
 ### CICD process.

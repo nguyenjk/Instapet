@@ -2,13 +2,14 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: instapet-cluster
+  name: instapet
   region: us-west-2
 
 nodeGroups:
   - name: instapet-nodegroup
     instanceType: t2.micro
-    desiredCapacity: 2
+    minSize: 2
+    maxSize: 10
     iam:
         withAddonPolicies:
           albIngress: true
@@ -16,10 +17,7 @@ nodeGroups:
           cloudWatch: true
 
 
-#Loging
+
 cloudWatch:
-    clusterLogging:
-    # enable specific types of cluster control plane logs
-    enableTypes: ["audit", "authenticator", "controllerManager"]
-    # all supported types: "api", "audit", "authenticator", "controllerManager", "scheduler"
-    # supported special values: "*" and "all"
+  clusterLogging:
+    enableTypes: ["audit", "authenticator"]

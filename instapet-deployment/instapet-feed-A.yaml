@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: instapet-user
-  name: instapet-user
+    service: instapet-feed
+  name: instapet-feed-A
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
-        service: instapet-user
+        service: instapet-feed
     spec:
       containers:
-      - image: nguyendk82/instapet-user
-        name: instapet-user
+      - image: nguyendk82/instapet-feed
+        name: instapet-feed
         imagePullPolicy: Always  
         resources:
           requests:
