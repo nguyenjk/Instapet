@@ -14,14 +14,11 @@ before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    fi
 install:
   - docker-compose -f docker-compose-build.yaml build --parallel 
 
 deploy:
-  - docker push nguyendk82/instapet-feed
-  - docker push nguyendk82/instapet-user
-  - docker push nguyendk82/reverseproxy
-  - docker push nguyendk82/instapet-web:local
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master

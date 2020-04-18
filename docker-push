@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push nguyendk82/instapet-feed
+docker push nguyendk82/instapet-user
+docker push nguyendk82/reverseproxy
+docker push nguyendk82/instapet-web:local
