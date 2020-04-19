@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     service: instapet-feed
-  name: instapet-feed-B
+  name: instapet-feed-b
 spec:
   replicas: 2
   template:

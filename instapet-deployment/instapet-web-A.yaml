@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     service: instapet-web
-  name: instapet-web-A
+  name: instapet-web-a
 spec:
   replicas: 2
   template:

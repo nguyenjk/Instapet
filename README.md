@@ -129,6 +129,7 @@ Open browser at http://localhost:8080
 ```
 
 #### Deployment and Running local 
+you can deploy the new version of the app without interrupting the service. The way we do that is adding the service layer to abstract the deployment layer. When you roll out the new version of the service or the web app, while the pod is replicated new pod with version of the app, the service layer continue to manage which pod is available and running without being interrupting. The client won't know what happened behind the scene. Kubernetes manages the traffic and reroute to the available pod.
 
 ```bash
     #deploy config and secret
@@ -153,8 +154,11 @@ Open browser at http://localhost:8080
     kubectl port-forward -p 8100:8100 service/instapet-web
 
     #scaling
-    
+
 ```
+
+In addition, you can also run AB testing for the service or the app by changing the name of the label for each deployment. 
+The service will acting as abstract level to reroute traffic to pod A or pod B. we can also create separate node group for ab testing.
 
 ### CICD process.
 
@@ -166,3 +170,10 @@ Currently, the process of CICD is not completed. The chart below shows the proce
 The dot line represent not completed.
 
 ![cicd chart](/resources/cicd.png)
+
+
+
+### Screenshot document
+
+Please take a look at this for 
+[screenshot document ](/resources/submit)
