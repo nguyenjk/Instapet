@@ -176,4 +176,4 @@ The dot line represent not completed.
 ### Screenshot document
 
 Please take a look at this for 
-[screenshot document ](/resources/submit.md)
+[screenshot document ](submit.md)
